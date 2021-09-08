@@ -15,7 +15,7 @@ public class ui : MonoBehaviour{
     public Sprite E;
     public Sprite Q;
 
-    float startPalletTimer = 2;
+    public float startPalletTimer = 2;
     float palletTimer;
 
     SpriteRenderer spButton;
@@ -38,7 +38,6 @@ public class ui : MonoBehaviour{
     }
 
     public void setButton(GameObject pallet){
-        Debug.Log("working");
         if(button == "e"){
             button = "q";
             spButton.sprite = Q;
@@ -46,6 +45,21 @@ public class ui : MonoBehaviour{
             button = "e";
             spButton.sprite = E;
         }
+
+        destoryOppPallet(pallet);
         Destroy(pallet);
+    }
+
+    public void destoryOppPallet(GameObject pallet){
+        if(pallet.tag == "LeftPellet"){
+            Transform oppsitePallet = leftSpawn.GetChild(0);
+            uiPallet pallScript = oppsitePallet.GetComponent<uiPallet>();
+            pallScript.DestroyPallet();
+
+        }else if(pallet.tag == "RightPellet"){
+            Transform oppsitePallet = rightSpawn.GetChild(0);
+            uiPallet pallScript = oppsitePallet.GetComponent<uiPallet>();
+            pallScript.DestroyPallet();
+        }
     }
 }

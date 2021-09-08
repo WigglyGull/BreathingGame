@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2448047742696131177}
   m_Layer: 0
   m_Name: uiPelletRight
-  m_TagString: Untagged
+  m_TagString: RightPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,8 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   left: 0
-  speed: 0.2
-  ui: {fileID: 8827603315232880493, guid: 573260c2443101d41b172d73f4278e2b, type: 3}
+  speed: 0.5
 --- !u!50 &2448047742696131177
 Rigidbody2D:
   serializedVersion: 4

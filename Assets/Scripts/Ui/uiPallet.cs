@@ -37,4 +37,8 @@ public class uiPallet : MonoBehaviour{
                 }
             }
         }
+    
+    public void DestroyPallet(){
+        Destroy(gameObject);
+    }
 }
