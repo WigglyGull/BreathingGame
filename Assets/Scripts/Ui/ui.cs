@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ui : MonoBehaviour{
     public GameObject buttonPrompt;
@@ -15,17 +16,32 @@ public class ui : MonoBehaviour{
     public Sprite E;
     public Sprite Q;
 
-    public float startPalletTimer = 2;
+    public int life;
+    public float speed;
+    public GameManager gm;
+
+    public float startPalletTimer = 1.5f;
     float palletTimer;
 
     SpriteRenderer spButton;
 
     void Start(){
+        life = 0;
         palletTimer = startPalletTimer;
         spButton = buttonPrompt.GetComponent<SpriteRenderer>();
     }
 
     void Update(){
+        Debug.Log(life);
+        if(life >= 10) SceneManager.LoadScene("MainRoom");
+        if(gm.minutes >= 1 && startPalletTimer != 1){
+            startPalletTimer = 1;
+        }
+        if(gm.minutes >= 2 && startPalletTimer != 0.5f){
+            startPalletTimer = 0.5f;
+        }
+        
+        
         if(palletTimer <= 0){
             palletTimer = startPalletTimer;
             spawnPallets();
@@ -33,8 +49,24 @@ public class ui : MonoBehaviour{
     }
 
     void spawnPallets(){
-        Instantiate(leftPallet, rightSpawn);
-        Instantiate(rightPallet, leftSpawn);
+        GameObject newLeftPallet = leftPallet;
+        GameObject newRightPallet = rightPallet;
+
+        uiPallet leftUiPallet = newLeftPallet.GetComponent<uiPallet>();
+        uiPallet rightUiPallet = newRightPallet.GetComponent<uiPallet>();
+
+        if(life >= 4){
+            leftUiPallet.startSpeed = 1;
+            rightUiPallet.startSpeed = 1;
+            startPalletTimer = 1;
+        }else if(life >= 8){
+            leftUiPallet.startSpeed = 1.5f;
+            rightUiPallet.startSpeed = 1.5f;
+            startPalletTimer = 0.5f;
+        }
+
+        Instantiate(newLeftPallet, rightSpawn);
+        Instantiate(newRightPallet, leftSpawn);
     }
 
     public void setButton(GameObject pallet){

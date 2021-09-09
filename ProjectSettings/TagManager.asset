@@ -8,6 +8,7 @@ TagManager:
   - Safe
   - LeftPellet
   - RightPellet
+  - Boss
   layers:
   - Default
   - TransparentFX
