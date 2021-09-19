@@ -47,10 +47,10 @@ public class uiPallet : MonoBehaviour{
             Boss bossScript = boss.GetComponent<Boss>();
 
             if(uiScript.button == "e" && Input.GetKey("e")){
-                if(bossScript.breathing) uiScript.setButton(gameObject);
+                if(bossScript.breathing || bossScript.tut) uiScript.setButton(gameObject);
             }
             if(uiScript.button == "q" && Input.GetKey("q")){
-                if(bossScript.breathing) uiScript.setButton(gameObject);
+                if(bossScript.breathing || bossScript.tut) uiScript.setButton(gameObject);
             }
         }
     }

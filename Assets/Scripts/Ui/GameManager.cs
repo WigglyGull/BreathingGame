@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour{
     public float seconds, minutes;
     
     void Update(){
-        minutes = (int)(Time.time/60f);
-        seconds = (int)(Time.time % 60f);
-        timer.text = "Time: " + minutes.ToString("0") + ":" + seconds.ToString("00");
+        minutes = (int)(Time.timeSinceLevelLoad/60f);
+        seconds = (int)(Time.timeSinceLevelLoad % 60f);
+        if(timer != null) timer.text = "Time: " + minutes.ToString("0") + ":" + seconds.ToString("00");
     }
 }

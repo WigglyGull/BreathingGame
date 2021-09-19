@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour{
     public SpriteRenderer distanceSp;
     public float duration;    //the max time of a walking session (set to ten)
     public float speed;
+    public bool tut = false;
 
     float elapsedTime = 0f; //time since started walk
     float wait = 0f; //wait this much time
@@ -27,6 +28,8 @@ public class Boss : MonoBehaviour{
     }
 
     void Update(){
+        if(tut) return;
+        
         GameObject player = GameObject.Find("Player");
         float distance = Vector2.Distance(this.transform.position, player.transform.position);
 

@@ -678,6 +678,7 @@ MonoBehaviour:
   distanceSp: {fileID: 1380274275}
   duration: 10
   speed: 0.8
+  tut: 0
   breathing: 0
 --- !u!212 &666906524
 SpriteRenderer:
@@ -840,7 +841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339.71906, y: 198.45319}
+  m_AnchoredPosition: {x: -295, y: 173}
   m_SizeDelta: {x: 178.5618, y: 79.5395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818331631
@@ -1112,7 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1333,6 +1334,8 @@ MonoBehaviour:
   E: {fileID: -7614968012346580038, guid: 769079aeed1ec8c44a77179ad51782ff, type: 3}
   Q: {fileID: -894122103821205953, guid: 769079aeed1ec8c44a77179ad51782ff, type: 3}
   life: 0
+  speed: 0
+  manager: {fileID: 282359099}
   startPalletTimer: 1.5
 --- !u!61 &1462047343
 BoxCollider2D:

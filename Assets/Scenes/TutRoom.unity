@@ -233,12 +233,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33776771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2b1852f2d6710d4ebc7e26973aae437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 0
   anim: {fileID: 33776773}
 --- !u!1 &271663329
 GameObject:
@@ -329,6 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282359101}
   - component: {fileID: 282359100}
+  - component: {fileID: 282359102}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -375,6 +376,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &282359102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282359099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9a9dabea007a74588f043ec49f4b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  seconds: 0
+  minutes: 0
 --- !u!1 &290203023
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +824,7 @@ GameObject:
   - component: {fileID: 666906525}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -837,7 +853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666906521}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 222ee716fbc5ab9428a9fd1ea303eb4e, type: 3}
   m_Name: 
@@ -846,6 +862,7 @@ MonoBehaviour:
   distanceSp: {fileID: 1380274275}
   duration: 10
   speed: 0
+  tut: 1
   breathing: 0
 --- !u!212 &666906524
 SpriteRenderer:
@@ -1298,7 +1315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I also have a really bad cough to get me out of a cough spam space bar
+  m_Text: Messing up will make breathing harder for me.
 --- !u!222 &876243159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1608,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1871,7 +1888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: If I die you will get fired... so  don't let it happen.
+  m_Text: Also don't let me die if I die you will get fired... so  don't let it happen.
 --- !u!222 &1392561380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1986,6 +2003,9 @@ MonoBehaviour:
   button: e
   E: {fileID: -7614968012346580038, guid: 769079aeed1ec8c44a77179ad51782ff, type: 3}
   Q: {fileID: -894122103821205953, guid: 769079aeed1ec8c44a77179ad51782ff, type: 3}
+  life: 0
+  speed: 0
+  manager: {fileID: 282359099}
   startPalletTimer: 1.5
 --- !u!61 &1462047343
 BoxCollider2D:
@@ -2192,7 +2212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In a cough breathing becomes harder and i will die if I stay coughing
+  m_Text: So just don't mess up and you will be fine.
 --- !u!222 &1940236525
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -18,7 +18,8 @@ public class ui : MonoBehaviour{
 
     public int life;
     public float speed;
-    public GameManager gm;
+    public GameObject manager;
+    GameManager gm;
 
     public float startPalletTimer = 1.5f;
     float palletTimer;
@@ -29,11 +30,15 @@ public class ui : MonoBehaviour{
         life = 0;
         palletTimer = startPalletTimer;
         spButton = buttonPrompt.GetComponent<SpriteRenderer>();
+
+        gm = manager.GetComponent<GameManager>();
     }
 
     void Update(){
         Debug.Log(life);
-        if(life >= 10) SceneManager.LoadScene("MainRoom");
+        if(life >= 10){
+            SceneManager.LoadScene("MainRoom");
+        }
         if(gm.minutes >= 1 && startPalletTimer != 1){
             startPalletTimer = 1;
         }
